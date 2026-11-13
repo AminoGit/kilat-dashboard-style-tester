@@ -347,6 +347,43 @@ input[type=text]{min-height:47px;border:1px solid #89978a;border-radius:9px;padd
   order:2;margin-left:auto;border:1px solid currentColor;border-radius:50%;padding:1.3cqw;
 }
 
+.dashboard[data-menu-revision="bubble-stack"]{
+  --radius:10px;
+  --body:"Trebuchet MS",system-ui,sans-serif;
+  --display:var(--body);
+  --font-weight:800;
+}
+.dashboard[data-menu-revision="bubble-stack"] .shortcut .glyph{
+  background:var(--accent);color:var(--accent-ink);border-radius:50%;padding:1.25cqw;
+}
+.dashboard[data-menu-revision="bubble-stack"] .pair:first-child .shortcut:first-child{
+  border-radius:13px 22px 15px 23px;box-shadow:2px 3px 0 var(--line);
+}
+.dashboard[data-menu-revision="bubble-stack"]:not([data-treatment="mono"]) .pair:first-child .shortcut:nth-child(2){
+  border-radius:5px 12px 12px 5px;border-left:3px solid var(--accent);
+}
+.dashboard[data-menu-revision="bubble-stack"]:not([data-treatment="mono"]) .pair:first-child .shortcut:nth-child(2) .glyph{
+  background:none;color:var(--surface);border-radius:4px;outline:1px solid currentColor;outline-offset:-1px;
+}
+.dashboard[data-menu-revision="bubble-stack"]:not([data-treatment="mono"]) .pair:last-child .shortcut:first-child .glyph{
+  color:inherit;background:transparent;padding:.55cqw;
+}
+.dashboard[data-menu-revision="bubble-stack"]:not([data-treatment="mono"]) .pair:last-child .shortcut:nth-child(2){
+  border-style:solid;border-width:0 0 1px;background:linear-gradient(90deg,var(--surface),color-mix(in srgb,var(--surface) 78%,transparent));
+}
+.dashboard[data-menu-revision="bubble-stack"][data-treatment="mono"] .pair:first-child .shortcut:first-child{
+  border-radius:var(--radius);box-shadow:var(--dash-shadow);
+}
+.dashboard[data-menu-revision="bubble-stack"][data-treatment="expressive"] .pair:first-child .shortcut:nth-child(2){
+  border-radius:3px;border-left-width:5px;
+}
+.dashboard[data-menu-revision="bubble-stack"][data-treatment="expressive"] .pair:last-child .shortcut:first-child{
+  clip-path:polygon(8% 0,87% 0,100% 50%,87% 100%,0 100%);padding-right:3.25cqw;
+}
+.dashboard[data-menu-revision="bubble-stack"][data-treatment="expressive"] .pair:last-child .shortcut:nth-child(2) .glyph{
+  background:transparent;color:inherit;
+}
+
 </style>
 </head>
 <body>
@@ -464,7 +501,7 @@ input[type=text]{min-height:47px;border:1px solid #89978a;border-radius:9px;padd
   </section>
 </main>
 <script>
-const styles = [{"id":"pocket-pebble","name":"Pocket Pebble","colors":{"surface":"#ffe8d4","ink":"#422b2a","muted":"#694b45","accent":"#a14d47","accent-ink":"#fff8ee","line":"#d09c88"},"traits":["pill","friendly"]},{"id":"bubble-stack","name":"Bubble Stack","colors":{"surface":"#d6effa","ink":"#231f4c","muted":"#443b73","accent":"#74479e","accent-ink":"#fff8fd","line":"#a983bb"},"traits":["bubble","friendly"]},{"id":"sticker-peel","name":"Sticker Peel","colors":{"surface":"#ffdc50","ink":"#202026","muted":"#514322","accent":"#26222e","accent-ink":"#fff1a0","line":"#6f551a"},"traits":["sticker","poster"]},{"id":"arcade-cabinet","name":"Arcade Cabinet","colors":{"surface":"#7b3052","ink":"#fff0c2","muted":"#ffd6b0","accent":"#ffd86a","accent-ink":"#502039","line":"#c9758f"},"traits":["bevel","pixel"]},{"id":"paper-ticket","name":"Paper Ticket","colors":{"surface":"#fff0d0","ink":"#234c43","muted":"#476558","accent":"#397462","accent-ink":"#fff7de","line":"#9d9473"},"traits":["ticket","condensed"]},{"id":"terminal-prompt","name":"Terminal Prompt","colors":{"surface":"#20241c","ink":"#eef4d4","muted":"#c6d5a4","accent":"#bddc95","accent-ink":"#24351a","line":"#7b995d"},"traits":["scan","mono"]},{"id":"signal-reticle","name":"Signal Reticle","colors":{"surface":"#112b36","ink":"#efffff","muted":"#b9dfdf","accent":"#7bf0eb","accent-ink":"#17363e","line":"#428888"},"traits":["reticle","mono"]},{"id":"access-reader","name":"Access Reader","colors":{"surface":"#cbd5d9","ink":"#1d3037","muted":"#435861","accent":"#286a57","accent-ink":"#eefaf5","line":"#657f85"},"traits":["metal","status","condensed"]},{"id":"telemetry-strip","name":"Telemetry Strip","colors":{"surface":"#13253a","ink":"#e8f5ff","muted":"#bfd5ea","accent":"#83c4ff","accent-ink":"#152f4e","line":"#4b78a1"},"traits":["trace","mono"]},{"id":"field-directive","name":"Field Directive","colors":{"surface":"#292419","ink":"#fff1bf","muted":"#e5d09f","accent":"#efc368","accent-ink":"#2b2110","line":"#91733f"},"traits":["angle","condensed"]},{"id":"celestial-seal","name":"Celestial Seal","colors":{"surface":"#2c203d","ink":"#fff1cd","muted":"#e7d1ad","accent":"#e1b96d","accent-ink":"#302031","line":"#987453"},"traits":["arch","roman"]},{"id":"wish-envelope","name":"Wish Envelope","colors":{"surface":"#f7e0d9","ink":"#512942","muted":"#734954","accent":"#9e4e66","accent-ink":"#fff1df","line":"#bd8d85"},"traits":["envelope","editorial"]},{"id":"crystal-gate","name":"Crystal Gate","colors":{"surface":"#352b61","ink":"#faf0ff","muted":"#e0d2f6","accent":"#d6abf7","accent-ink":"#372258","line":"#8468ab"},"traits":["facet","roman"]},{"id":"event-banner","name":"Event Banner","colors":{"surface":"#78295b","ink":"#fff0d4","muted":"#ffd9c3","accent":"#ffc477","accent-ink":"#4a183a","line":"#c46d91"},"traits":["banner","condensed"]},{"id":"relic-plaque","name":"Relic Plaque","colors":{"surface":"#1d473b","ink":"#fff4cb","muted":"#ded9a6","accent":"#ddcc83","accent-ink":"#253b2e","line":"#928b60"},"traits":["inset","roman"]},{"id":"street-billboard","name":"Street Billboard","colors":{"surface":"#def375","ink":"#22252a","muted":"#4c552e","accent":"#252926","accent-ink":"#f8ffd0","line":"#687537"},"traits":["billboard","poster"]},{"id":"night-map","name":"Night Map","colors":{"surface":"#202d34","ink":"#fff3dc","muted":"#ded7be","accent":"#f6b851","accent-ink":"#30241a","line":"#9b7950"},"traits":["map","condensed"]},{"id":"mission-slate","name":"Mission Slate","colors":{"surface":"#22232c","ink":"#fff0df","muted":"#dbd6d5","accent":"#f1c1a8","accent-ink":"#2a242d","line":"#8b7c86"},"traits":["clapper","condensed"]},{"id":"club-marquee","name":"Club Marquee","colors":{"surface":"#2e1c43","ink":"#ffeafa","muted":"#e6b5db","accent":"#f9acd9","accent-ink":"#3c2350","line":"#aa619e"},"traits":["marquee","poster"]},{"id":"broadcast-lower-third","name":"Broadcast Lower Third","colors":{"surface":"#90372e","ink":"#fff5e8","muted":"#f9d3c8","accent":"#fff0bc","accent-ink":"#53241c","line":"#ca7762"},"traits":["lower-third","condensed"]},{"id":"account-card","name":"Account Card","colors":{"surface":"#134e43","ink":"#f1fff2","muted":"#c0e7d1","accent":"#b7ebc6","accent-ink":"#164135","line":"#598675"},"traits":["wallet","friendly"]},{"id":"passbook","name":"Passbook","colors":{"surface":"#eff1e6","ink":"#263b3a","muted":"#48635b","accent":"#3a715a","accent-ink":"#fff8e8","line":"#9baea0"},"traits":["passbook","editorial"]},{"id":"ledger-row","name":"Ledger Row","colors":{"surface":"#eceff5","ink":"#29364c","muted":"#4d5b72","accent":"#42577c","accent-ink":"#fff","line":"#9faac2"},"traits":["ledger","compact"]},{"id":"security-alert","name":"Security Alert","colors":{"surface":"#e5eeff","ink":"#1e3a73","muted":"#42567e","accent":"#315fae","accent-ink":"#fff","line":"#8ba6da"},"traits":["callout","compact"]},{"id":"fast-transfer","name":"Fast Transfer","colors":{"surface":"#28452e","ink":"#f1ffe7","muted":"#c5e5bd","accent":"#bef0aa","accent-ink":"#28422b","line":"#71916c"},"traits":["transfer","friendly"]},{"id":"command-palette","name":"Command Palette","colors":{"surface":"#262637","ink":"#fcf2ff","muted":"#d9cce8","accent":"#cdbcf5","accent-ink":"#352947","line":"#796d9d"},"traits":["keycap","mono"]},{"id":"workspace-switcher","name":"Workspace Switcher","colors":{"surface":"#f1ecfa","ink":"#302745","muted":"#594a6f","accent":"#664494","accent-ink":"#fff","line":"#ad99c9"},"traits":["workspace","compact"]},{"id":"split-action","name":"Split Action","colors":{"surface":"#353d92","ink":"#fdf9ff","muted":"#dddffa","accent":"#d9d4fa","accent-ink":"#322769","line":"#838bd2"},"traits":["split","compact"]},{"id":"activity-inbox","name":"Activity Inbox","colors":{"surface":"#f0f0ea","ink":"#253247","muted":"#52617a","accent":"#485d86","accent-ink":"#fff","line":"#9ca8ba"},"traits":["stack","compact"]},{"id":"inspector-tab","name":"Inspector Tab","colors":{"surface":"#263d54","ink":"#edfaff","muted":"#b9d5e6","accent":"#a5d1eb","accent-ink":"#273a4a","line":"#7d9cb6"},"traits":["inspector","mono"]},{"id":"race-bib","name":"Race Bib","colors":{"surface":"#faf0dd","ink":"#292633","muted":"#554749","accent":"#9f392e","accent-ink":"#fff2df","line":"#c5a995"},"traits":["bib","condensed"]},{"id":"speed-wedge","name":"Speed Wedge","colors":{"surface":"#d8f64b","ink":"#25300f","muted":"#465218","accent":"#263215","accent-ink":"#f0ffbe","line":"#6a8220"},"traits":["wedge","speed"]},{"id":"checkpoint-gate","name":"Checkpoint Gate","colors":{"surface":"#292c39","ink":"#fff3d7","muted":"#e6d2b0","accent":"#f4ba74","accent-ink":"#39271d","line":"#a5764b"},"traits":["gate","condensed"]},{"id":"machine-switch","name":"Machine Switch","colors":{"surface":"#333c31","ink":"#f4f5e5","muted":"#d3d9c1","accent":"#c3e185","accent-ink":"#25331d","line":"#819078"},"traits":["rocker","condensed"]},{"id":"route-board","name":"Route Board","colors":{"surface":"#20314f","ink":"#fff3d7","muted":"#e9d8b1","accent":"#f6c26d","accent-ink":"#253550","line":"#887d6c"},"traits":["route","condensed"]},{"id":"index-tab","name":"Index Tab","colors":{"surface":"#eee0b9","ink":"#413925","muted":"#64583c","accent":"#78613a","accent-ink":"#fff5de","line":"#a99b6e"},"traits":["folder","editorial"]},{"id":"magazine-cover","name":"Magazine Cover","colors":{"surface":"#f2ead9","ink":"#342f26","muted":"#655642","accent":"#524531","accent-ink":"#fff6e2","line":"#a6987f"},"traits":["magazine","editorial"]},{"id":"airglass-label","name":"Airglass Label","colors":{"surface":"#263943","ink":"#f3fbff","muted":"#d2e7ed","accent":"#c6e7f0","accent-ink":"#213642","line":"#73949d"},"traits":["airglass","compact"]},{"id":"vertical-spine","name":"Vertical Spine","colors":{"surface":"#deedf0","ink":"#243c4a","muted":"#4a6773","accent":"#3e697e","accent-ink":"#fff","line":"#9ab2bc"},"traits":["spine","condensed"]},{"id":"orbit-button","name":"Orbit Button","colors":{"surface":"#303951","ink":"#f4f3ff","muted":"#d4daea","accent":"#c8dcf5","accent-ink":"#2b3650","line":"#7d8ba4"},"traits":["orbit","compact"]},{"id":"godot-speed-slab","name":"Godot Speed Slab","colors":{"surface":"#14213d","ink":"#f5f0e5","muted":"#e6dfd0","accent":"#ff5a1f","accent-ink":"#14213d","line":"#a7afbd"},"traits":["godot","speed"]},{"id":"varied-menu","name":"Varied Menu","colors":{"surface":"#263b37","ink":"#fff6e4","muted":"#dfebdf","accent":"#f0c786","accent-ink":"#293425","line":"#819081"},"traits":["varied","editorial"]}];
+const styles = [{"id":"pocket-pebble","name":"Pocket Pebble","colors":{"surface":"#ffe8d4","ink":"#422b2a","muted":"#694b45","accent":"#a14d47","accent-ink":"#fff8ee","line":"#d09c88"},"traits":["pill","friendly"]},{"id":"bubble-stack","name":"Bubble Stack","colors":{"surface":"#d6effa","ink":"#231f4c","muted":"#443b73","accent":"#74479e","accent-ink":"#fff8fd","line":"#a983bb"},"traits":["bubble","friendly"]},{"id":"sticker-peel","name":"Sticker Peel","colors":{"surface":"#ffdc50","ink":"#202026","muted":"#514322","accent":"#26222e","accent-ink":"#fff1a0","line":"#6f551a"},"traits":["sticker","poster"]},{"id":"arcade-cabinet","name":"Arcade Cabinet","colors":{"surface":"#7b3052","ink":"#fff0c2","muted":"#ffd6b0","accent":"#ffd86a","accent-ink":"#502039","line":"#c9758f"},"traits":["bevel","pixel"]},{"id":"paper-ticket","name":"Paper Ticket","colors":{"surface":"#fff0d0","ink":"#234c43","muted":"#476558","accent":"#397462","accent-ink":"#fff7de","line":"#9d9473"},"traits":["ticket","condensed"]},{"id":"terminal-prompt","name":"Terminal Prompt","colors":{"surface":"#20241c","ink":"#eef4d4","muted":"#c6d5a4","accent":"#bddc95","accent-ink":"#24351a","line":"#7b995d"},"traits":["scan","mono"]},{"id":"signal-reticle","name":"Signal Reticle","colors":{"surface":"#112b36","ink":"#efffff","muted":"#b9dfdf","accent":"#7bf0eb","accent-ink":"#17363e","line":"#428888"},"traits":["reticle","mono"]},{"id":"access-reader","name":"Access Reader","colors":{"surface":"#cbd5d9","ink":"#1d3037","muted":"#435861","accent":"#286a57","accent-ink":"#eefaf5","line":"#657f85"},"traits":["metal","status","condensed"]},{"id":"telemetry-strip","name":"Telemetry Strip","colors":{"surface":"#13253a","ink":"#e8f5ff","muted":"#bfd5ea","accent":"#83c4ff","accent-ink":"#152f4e","line":"#4b78a1"},"traits":["trace","mono"]},{"id":"field-directive","name":"Field Directive","colors":{"surface":"#292419","ink":"#fff1bf","muted":"#e5d09f","accent":"#efc368","accent-ink":"#2b2110","line":"#91733f"},"traits":["angle","condensed"]},{"id":"celestial-seal","name":"Celestial Seal","colors":{"surface":"#2c203d","ink":"#fff1cd","muted":"#e7d1ad","accent":"#e1b96d","accent-ink":"#302031","line":"#987453"},"traits":["arch","roman"]},{"id":"wish-envelope","name":"Wish Envelope","colors":{"surface":"#f7e0d9","ink":"#512942","muted":"#734954","accent":"#9e4e66","accent-ink":"#fff1df","line":"#bd8d85"},"traits":["envelope","editorial"]},{"id":"crystal-gate","name":"Crystal Gate","colors":{"surface":"#352b61","ink":"#faf0ff","muted":"#e0d2f6","accent":"#d6abf7","accent-ink":"#372258","line":"#8468ab"},"traits":["facet","roman"]},{"id":"event-banner","name":"Event Banner","colors":{"surface":"#78295b","ink":"#fff0d4","muted":"#ffd9c3","accent":"#ffc477","accent-ink":"#4a183a","line":"#c46d91"},"traits":["banner","condensed"]},{"id":"relic-plaque","name":"Relic Plaque","colors":{"surface":"#1d473b","ink":"#fff4cb","muted":"#ded9a6","accent":"#ddcc83","accent-ink":"#253b2e","line":"#928b60"},"traits":["inset","roman"]},{"id":"street-billboard","name":"Street Billboard","colors":{"surface":"#def375","ink":"#22252a","muted":"#4c552e","accent":"#252926","accent-ink":"#f8ffd0","line":"#687537"},"traits":["billboard","poster"]},{"id":"night-map","name":"Night Map","colors":{"surface":"#202d34","ink":"#fff3dc","muted":"#ded7be","accent":"#f6b851","accent-ink":"#30241a","line":"#9b7950"},"traits":["map","condensed"]},{"id":"mission-slate","name":"Mission Slate","colors":{"surface":"#22232c","ink":"#fff0df","muted":"#dbd6d5","accent":"#f1c1a8","accent-ink":"#2a242d","line":"#8b7c86"},"traits":["clapper","condensed"]},{"id":"club-marquee","name":"Club Marquee","colors":{"surface":"#2e1c43","ink":"#ffeafa","muted":"#e6b5db","accent":"#f9acd9","accent-ink":"#3c2350","line":"#aa619e"},"traits":["marquee","poster"]},{"id":"broadcast-lower-third","name":"Broadcast Lower Third","colors":{"surface":"#90372e","ink":"#fff5e8","muted":"#f9d3c8","accent":"#fff0bc","accent-ink":"#53241c","line":"#ca7762"},"traits":["lower-third","condensed"]},{"id":"account-card","name":"Account Card","colors":{"surface":"#134e43","ink":"#f1fff2","muted":"#c0e7d1","accent":"#b7ebc6","accent-ink":"#164135","line":"#598675"},"traits":["wallet","friendly"]},{"id":"passbook","name":"Passbook","colors":{"surface":"#eff1e6","ink":"#263b3a","muted":"#48635b","accent":"#3a715a","accent-ink":"#fff8e8","line":"#9baea0"},"traits":["passbook","editorial"]},{"id":"ledger-row","name":"Ledger Row","colors":{"surface":"#eceff5","ink":"#29364c","muted":"#4d5b72","accent":"#42577c","accent-ink":"#fff","line":"#9faac2"},"traits":["ledger","compact"]},{"id":"security-alert","name":"Security Alert","colors":{"surface":"#e5eeff","ink":"#1e3a73","muted":"#42567e","accent":"#315fae","accent-ink":"#fff","line":"#8ba6da"},"traits":["callout","compact"]},{"id":"fast-transfer","name":"Fast Transfer","colors":{"surface":"#28452e","ink":"#f1ffe7","muted":"#c5e5bd","accent":"#bef0aa","accent-ink":"#28422b","line":"#71916c"},"traits":["transfer","friendly"]},{"id":"command-palette","name":"Command Palette","colors":{"surface":"#262637","ink":"#fcf2ff","muted":"#d9cce8","accent":"#cdbcf5","accent-ink":"#352947","line":"#796d9d"},"traits":["keycap","mono"]},{"id":"workspace-switcher","name":"Workspace Switcher","colors":{"surface":"#f1ecfa","ink":"#302745","muted":"#594a6f","accent":"#664494","accent-ink":"#fff","line":"#ad99c9"},"traits":["workspace","compact"]},{"id":"split-action","name":"Split Action","colors":{"surface":"#353d92","ink":"#fdf9ff","muted":"#dddffa","accent":"#d9d4fa","accent-ink":"#322769","line":"#838bd2"},"traits":["split","compact"]},{"id":"activity-inbox","name":"Activity Inbox","colors":{"surface":"#f0f0ea","ink":"#253247","muted":"#52617a","accent":"#485d86","accent-ink":"#fff","line":"#9ca8ba"},"traits":["stack","compact"]},{"id":"inspector-tab","name":"Inspector Tab","colors":{"surface":"#263d54","ink":"#edfaff","muted":"#b9d5e6","accent":"#a5d1eb","accent-ink":"#273a4a","line":"#7d9cb6"},"traits":["inspector","mono"]},{"id":"race-bib","name":"Race Bib","colors":{"surface":"#faf0dd","ink":"#292633","muted":"#554749","accent":"#9f392e","accent-ink":"#fff2df","line":"#c5a995"},"traits":["bib","condensed"]},{"id":"speed-wedge","name":"Speed Wedge","colors":{"surface":"#d8f64b","ink":"#25300f","muted":"#465218","accent":"#263215","accent-ink":"#f0ffbe","line":"#6a8220"},"traits":["wedge","speed"]},{"id":"checkpoint-gate","name":"Checkpoint Gate","colors":{"surface":"#292c39","ink":"#fff3d7","muted":"#e6d2b0","accent":"#f4ba74","accent-ink":"#39271d","line":"#a5764b"},"traits":["gate","condensed"]},{"id":"machine-switch","name":"Machine Switch","colors":{"surface":"#333c31","ink":"#f4f5e5","muted":"#d3d9c1","accent":"#c3e185","accent-ink":"#25331d","line":"#819078"},"traits":["rocker","condensed"]},{"id":"route-board","name":"Route Board","colors":{"surface":"#20314f","ink":"#fff3d7","muted":"#e9d8b1","accent":"#f6c26d","accent-ink":"#253550","line":"#887d6c"},"traits":["route","condensed"]},{"id":"index-tab","name":"Index Tab","colors":{"surface":"#eee0b9","ink":"#413925","muted":"#64583c","accent":"#78613a","accent-ink":"#fff5de","line":"#a99b6e"},"traits":["folder","editorial"]},{"id":"magazine-cover","name":"Magazine Cover","colors":{"surface":"#f2ead9","ink":"#342f26","muted":"#655642","accent":"#524531","accent-ink":"#fff6e2","line":"#a6987f"},"traits":["magazine","editorial"]},{"id":"airglass-label","name":"Airglass Label","colors":{"surface":"#263943","ink":"#f3fbff","muted":"#d2e7ed","accent":"#c6e7f0","accent-ink":"#213642","line":"#73949d"},"traits":["airglass","compact"]},{"id":"vertical-spine","name":"Vertical Spine","colors":{"surface":"#deedf0","ink":"#243c4a","muted":"#4a6773","accent":"#3e697e","accent-ink":"#fff","line":"#9ab2bc"},"traits":["spine","condensed"]},{"id":"orbit-button","name":"Orbit Button","colors":{"surface":"#303951","ink":"#f4f3ff","muted":"#d4daea","accent":"#c8dcf5","accent-ink":"#2b3650","line":"#7d8ba4"},"traits":["orbit","compact"]},{"id":"godot-speed-slab","name":"Godot Speed Slab","colors":{"surface":"#14213d","ink":"#f5f0e5","muted":"#e6dfd0","accent":"#ff5a1f","accent-ink":"#14213d","line":"#a7afbd"},"traits":["godot","speed"]},{"id":"varied-menu","name":"Varied Menu","colors":{"surface":"#d6effa","ink":"#231f4c","muted":"#443b73","accent":"#74479e","accent-ink":"#fff8fd","line":"#a983bb"},"traits":["varied","editorial"]}];
 const studyId = "kilat-dashboard-style-study";
 const version = 1;
 const get = id => document.getElementById(id);
@@ -472,6 +509,8 @@ const keys = new Set(styles.map(style => style.id));
 const styleById = new Map(styles.map(style => [style.id, style]));
 const addedStyles = ["godot-speed-slab", "varied-menu"];
 const originalKeys = new Set([...keys].filter(id => !addedStyles.includes(id)));
+const menuRevision = "bubble-stack";
+const originalMenuColors = {surface:"#263b37",ink:"#fff6e4",muted:"#dfebdf",accent:"#f0c786","accent-ink":"#293425",line:"#819081"};
 const scoreButtons = [...document.querySelectorAll(".score")];
 const previewButtons = [...document.querySelectorAll("[data-preview-style]")];
 const treatmentButtons = [...document.querySelectorAll("[data-treatment]")];
@@ -497,6 +536,7 @@ function validSession(value) {
     Object.entries(value.ratings).every(([id, score]) => sessionKeys.has(id) && Number.isInteger(score) && score >= 1 && score <= 5) &&
     typeof value.started === "string" && Number.isFinite(Date.parse(value.started)) &&
     typeof value.updated === "string" && Number.isFinite(Date.parse(value.updated)) &&
+    (value.menuRevision === undefined || (value.menuRevision === menuRevision && sessionKeys === keys)) &&
     (value.finished === null || (typeof value.finished === "string" && Number.isFinite(Date.parse(value.finished)) &&
       Object.keys(value.ratings).length === sessionKeys.size));
 }
@@ -593,14 +633,16 @@ function renderRespondent() {
   list.hidden = false;
 }
 
-function paintDashboard(id, mode = "mixed", reference = null) {
+function paintDashboard(id, mode = "mixed", reference = null, revision = menuRevision) {
   const style = styleById.get(id);
   const dashboard = get("dashboard");
   dashboard.dataset.style = id;
   dashboard.dataset.traits = style.traits.join(" ");
   dashboard.dataset.treatment = mode;
   dashboard.dataset.reference = reference?.id ?? "";
-  for (const [key, value] of Object.entries(reference?.colors ?? style.colors)) {
+  dashboard.dataset.menuRevision = id === addedStyles[1] ? revision : "";
+  const colors = id === addedStyles[1] && revision === "original" ? originalMenuColors : style.colors;
+  for (const [key, value] of Object.entries(reference?.colors ?? colors)) {
     dashboard.style.setProperty("--" + key, value);
   }
 }
@@ -609,7 +651,7 @@ function renderPreview() {
   const varied = previewId === addedStyles[1];
   const title = styleById.get(previewId).name;
   paintDashboard(previewId, treatment, varied ? referenceStyle : null);
-  get("preview-title").textContent = varied && referenceStyle ? title + " · " + referenceStyle.name : title;
+  get("preview-title").textContent = varied ? title + " · " + (referenceStyle?.name ?? "Bubble Stack") : title;
   get("treatments").hidden = !varied;
   for (const button of previewButtons) button.setAttribute("aria-pressed", String(button.dataset.previewStyle === previewId));
   for (const button of treatmentButtons) button.setAttribute("aria-pressed", String(button.dataset.treatment === treatment));
@@ -633,7 +675,7 @@ function openPreview(id, reference = null) {
 function render() {
   const id = current.order[position];
   const rated = Object.keys(current.ratings).length;
-  paintDashboard(id);
+  paintDashboard(id, "mixed", null, current.menuRevision ?? "original");
   get("position").textContent = "Style " + (position + 1) + " of " + current.order.length;
   get("completion").max = current.order.length;
   get("completion").value = rated;
@@ -673,7 +715,7 @@ function start(name) {
   const bytes = crypto.getRandomValues(new Uint8Array(16));
   const id = Array.from(bytes, byte => byte.toString(16).padStart(2, "0")).join("");
   const stamp = new Date().toISOString();
-  current = {id, name, order:shuffledOrder(), ratings:{}, started:stamp, updated:stamp, finished:null};
+  current = {id, name, order:shuffledOrder(), ratings:{}, started:stamp, updated:stamp, finished:null, menuRevision};
   store.sessions.push(current);
   store.active = id;
   position = 0;
@@ -780,9 +822,10 @@ get("results-button").addEventListener("click", () => {
 get("download-mine").addEventListener("click", () => backup([current], "-" + current.id.slice(0, 8)));
 get("json").addEventListener("click", () => backup(store.sessions));
 get("csv").addEventListener("click", () => {
-  const rows = [["participant_id","participant","started_at","completed_at","position","style_id","style","rating"]];
+  const rows = [["participant_id","participant","started_at","completed_at","position","style_id","style","rating","menu_revision"]];
   for (const row of store.sessions) row.order.forEach((id, index) => {
-    if (row.ratings[id]) rows.push([row.id,row.name,row.started,row.finished,index + 1,id,styleById.get(id).name,row.ratings[id]]);
+    if (row.ratings[id]) rows.push([row.id,row.name,row.started,row.finished,index + 1,id,styleById.get(id).name,row.ratings[id],
+      id === addedStyles[1] ? row.menuRevision ?? "original" : ""]);
   });
   download("kilat-ratings.csv", "\ufeff" + rows.map(row => row.map(csvCell).join(",")).join("\r\n"), "text/csv;charset=utf-8");
 });
